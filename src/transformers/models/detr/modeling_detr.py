@@ -1393,7 +1393,7 @@ class DetrModel(DetrPreTrainedModel):
         )
         return_dict = return_dict if return_dict is not None else self.config.use_return_dict
 
-        batch_size, num_channels, height, width = pixel_values.shape
+        batch_size, num_channels, height, width = pixel_values.tensors.shape
         device = pixel_values.device
 
         if pixel_mask is None:
