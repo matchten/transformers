@@ -1568,7 +1568,7 @@ class DetrForObjectDetection(DetrPreTrainedModel):
 
         # First, sent images through DETR base model to obtain encoder + decoder outputs
         outputs = self.model(
-            pixel_values,
+            pixel_values.tensors,
             pixel_mask=pixel_mask,
             decoder_attention_mask=decoder_attention_mask,
             encoder_outputs=encoder_outputs,
